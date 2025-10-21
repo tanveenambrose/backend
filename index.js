@@ -2,10 +2,12 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
+const users = require('./routes/route');
 const birds = require('./routes/birds');
 app.use('/birds', birds);
+app.use('/users', users);
 
-const loggingMiddleware = (req, res, next) => {
+const loggingMiddleware = (req, res, next) => { 
     console.log('Logging done ')
     next();
 }
